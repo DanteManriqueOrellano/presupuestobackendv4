@@ -3,6 +3,7 @@ import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import { NextFunction, Response, Request } from "express";
 import { Container } from 'typedi'
+var cors = require('cors')
 const port = process.env.PORT || 3000
 
 const http = require('http');
@@ -28,6 +29,15 @@ class Server {
             this.resolverServer()
             
             this.startServer(this.httpServer);
+
+            this.app.use(cors({
+                origin:'*',
+                exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+                maxAge: 5,
+                credentials: true,
+                allowMethods: ['GET', 'POST', 'DELETE'],
+                allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+            }));
 
             
             this.app.get("/admin",
