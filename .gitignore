@@ -1,0 +1,5 @@
+# Build files
+/dist/*
+/node_modules/*
+/node_modules
+/serviceAccountKey.json
