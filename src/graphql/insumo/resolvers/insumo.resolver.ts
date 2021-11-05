@@ -8,7 +8,7 @@ import { GoogleSpreadsheet, ServiceAccountCredentials } from 'google-spreadsheet
 
 
 // Initialize the sheet - doc ID is the long id in the sheets URL
-const doc:GoogleSpreadsheet = new GoogleSpreadsheet(process.env.SHEETID);
+const doc:GoogleSpreadsheet = new GoogleSpreadsheet("1ASj5e0N7o50GqYeJTDY2QSgNA8ZmrdtdG0SO7D3XO7Q");
 const credentials:ServiceAccountCredentials = {
     
       
