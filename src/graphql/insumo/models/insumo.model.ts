@@ -23,7 +23,8 @@ export enum u_medida {
     DIA = "DIA",
     GR = "GR",//GRAMO
     LT = "LT",//LITRO
-    VAR= "VAR"//VARILLA
+    VAR= "VAR",//VARILLA
+    PAR = "PAR",
 }
 registerEnumType(u_medida, {
     name: "u_medida",
