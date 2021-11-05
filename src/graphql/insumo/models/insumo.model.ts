@@ -21,7 +21,8 @@ export enum u_medida {
     RLL = "RLL",//ROLLO
     MLL = "MLL",//MILLAR
     DIA = "DIA",
-    GR = "GRAMO"
+    GR = "GRAMO",
+    LT = "LT"//LITRO
 }
 registerEnumType(u_medida, {
     name: "u_medida",
@@ -35,7 +36,7 @@ export class InsumoModel extends BaseInsumoType {
     @Field()
     insumo: string;
     @Field()
-    precio: number;
+    precio?: number;
     @Field(_type => u_medida)
     umedida?: u_medida;
     @Field()
