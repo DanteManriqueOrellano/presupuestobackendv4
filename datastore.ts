@@ -16,6 +16,7 @@ export type createInput<T> = {
 interface IDatabase {
     create<T>(input: createInput<T>, id?: string): Promise<any>;
     deleteById(id: string): Promise<string>;
+    findById(id: string): Promise<any>;
     listAll(): Promise<any[]>;
     update<T>(input: createInput<T>, id?: any): Promise<IEntity>
 }
@@ -28,6 +29,9 @@ export class BaseCrud extends RESTDataSource implements IDatabase {
         super();
         this.modelo = model
         this.repository = getRepository(this.modelo)
+    }
+    findById(id: string): Promise<any> {
+        return this.repository.findById(id)
     }
 
     async create<T>(input: createInput<T>, _id?: string): Promise<any> {

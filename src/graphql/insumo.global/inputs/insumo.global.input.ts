@@ -1,16 +1,14 @@
 import { ArgsType, Field, ID, InputType, ObjectType } from "type-graphql";
-import { u_medida } from "../models/insumo.model";
+import { u_medida } from "../models/insumo.global.model";
 
 @ArgsType()
 @InputType()
-export class  InsumoInput  {
+export class  InsumoGlobalInput  {
     @Field(type => ID)
     id:string;
     @Field()
     insumo: string;
-    @Field()
-    precio: number;
-    @Field(_type => u_medida)
+    @Field(type => u_medida)
     umedida?: u_medida;
     @Field()
     categoria: string

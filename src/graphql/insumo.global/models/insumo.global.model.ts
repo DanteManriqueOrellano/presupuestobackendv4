@@ -2,19 +2,19 @@ import 'reflect-metadata'
 
 import { ArgsType, Field, ObjectType, registerEnumType } from 'type-graphql'
 import { Collection } from "fireorm";
-import { BaseInsumoType } from '../types/insumo.type';
+import { BaseInsumoType } from '../types/insumo.global.type';
 
 export enum u_medida {
     UND = "UND",
     KG = "KG",
-    BOL = "BOL",
+    BOL = "BOL",//BOLSA
     M = "M",
     M2 = "M2",
     M3 = "M3",
     GLB = "GLB",
     MES = "MES",
     GAL = "GAL",
-    PZA = "PZA",
+    PZA = "PZA",//PIEZA
     PLN = "PLN",//PLANCHA
     P2 = "P2",
     PLG = "PLG",//PLIEGO
@@ -25,6 +25,8 @@ export enum u_medida {
     LT = "LT",//LITRO
     VAR= "VAR",//VARILLA
     PAR = "PAR",
+    CAJ="CAJ",//CAJA
+
 }
 registerEnumType(u_medida, {
     name: "u_medida",
@@ -33,12 +35,10 @@ registerEnumType(u_medida, {
 
 @ArgsType()
 @ObjectType()
-@Collection('Insumo') //nombre personalizado de la coleccion
-export class InsumoModel extends BaseInsumoType {
+@Collection('Insumoglobal') //nombre personalizado de la coleccion
+export class InsumoGlobalModel extends BaseInsumoType {
     @Field()
     insumo: string;
-    @Field()
-    precio?: number;
     @Field(_type => u_medida)
     umedida?: u_medida;
     @Field()

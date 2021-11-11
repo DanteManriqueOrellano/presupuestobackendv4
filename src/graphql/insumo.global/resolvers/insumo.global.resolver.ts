@@ -1,8 +1,8 @@
 import 'reflect-metadata'
 import { Query, Resolver, Args, Mutation, Arg, Ctx } from 'type-graphql'
-import { InsumoModel } from '../models/insumo.model';
-import { IcontextInsumo } from '../context/contextInsumo';
-import { InsumoInput } from '../inputs/insumo.input';
+import { InsumoGlobalModel } from '../models/insumo.global.model';
+import { IcontextInsumoGlobal } from '../context/context.Insumo.global';
+import { InsumoGlobalInput } from '../inputs/insumo.global.input';
 require('dotenv').config()
 import { GoogleSpreadsheet, ServiceAccountCredentials } from 'google-spreadsheet';
 
@@ -18,7 +18,7 @@ const credentials:ServiceAccountCredentials = {
 } //require('../../../../configooglesheet.json');
 
 @Resolver()
-export class Insumo {
+export class InsumoGlobalResolver {
 
     //@UseMiddleware(isAuth)
     /*@Mutation(() => InsumoModel)
@@ -29,15 +29,15 @@ export class Insumo {
     ): Promise<InsumoModel> {
         return await context.dataSources.insumo.create({ dataObj: insumo})
     }*/
-    @Query(() => [InsumoModel])
+    @Query(() => [InsumoGlobalModel])
     async listarInsumos(
-        @Ctx() context: IcontextInsumo
-    ): Promise<InsumoModel[]> {
+        @Ctx() context: IcontextInsumoGlobal
+    ): Promise<InsumoGlobalModel[]> {
         await doc.useServiceAccountAuth(credentials); 
         await doc.loadInfo();
             const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
             const rows = await sheet.getRows();
-            const listaInsumo:InsumoModel[] =	[]
+            const listaInsumo:InsumoGlobalModel[] =	[]
             for(let i =0;i<rows.length;i++){
                 listaInsumo.push({
                     id:rows[i].codigo,
