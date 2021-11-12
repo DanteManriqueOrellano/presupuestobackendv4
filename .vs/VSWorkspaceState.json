@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\graphql",
+    "\\src\\graphql\\ejecucion.obra",
+    "\\src\\graphql\\ejecucion.obra\\resolvers"
   ],
-  "SelectedNode": "\\index.ts",
+  "SelectedNode": "\\src\\graphql\\ejecucion.obra\\resolvers\\ejecucion.obra.resolver.ts",
   "PreviewInSolutionExplorer": false
 }

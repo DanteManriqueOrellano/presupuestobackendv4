@@ -13,7 +13,7 @@ export class EjecucionObraResolver{
         return await context.dataSources.ejecucionobra.create({dataObj:ejecucionobra})
     }
 
-    @Query(() => EjecucionObraModel)
+    @Query(() => [EjecucionObraModel])
     async listaEjecucionObra(
         @Ctx() context: EjecucionObraContex
     ):Promise<EjecucionObraModel[]>{
