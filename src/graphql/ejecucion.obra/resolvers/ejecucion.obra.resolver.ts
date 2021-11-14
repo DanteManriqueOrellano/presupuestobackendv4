@@ -1,4 +1,4 @@
-import { Args, Ctx, Mutation, Query, Resolver } from "type-graphql";
+import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql";
 import { EjecucionObraContex } from "../context/ejecucion.obra.context";
 import { EjecucionObraInput } from "../inputs/ejecucion.obra.input";
 import { EjecucionObraModel } from "../models/ejecucion.obra.model";
@@ -15,6 +15,7 @@ export class EjecucionObraResolver{
 
     @Query(() => [EjecucionObraModel])
     async listaEjecucionObra(
+        
         @Ctx() context: EjecucionObraContex
     ):Promise<EjecucionObraModel[]>{
         return await context.dataSources.ejecucionobra.listAll()
@@ -22,9 +23,9 @@ export class EjecucionObraResolver{
 
     @Query(() => EjecucionObraModel)
     async buscaUnaEjecucionObra(
-        @Args() ejecucionobra: EjecucionObraInput,
+        @Arg('id') id: string,
         @Ctx() context: EjecucionObraContex
     ):Promise<EjecucionObraModel>{
-        return await context.dataSources.ejecucionobra.findById(ejecucionobra.id)
+        return await context.dataSources.ejecucionobra.findById(id)
     }
 }

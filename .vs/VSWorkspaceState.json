@@ -3,9 +3,14 @@
     "",
     "\\src",
     "\\src\\graphql",
+    "\\src\\graphql\\despacho",
+    "\\src\\graphql\\despacho\\resolvers",
     "\\src\\graphql\\ejecucion.obra",
-    "\\src\\graphql\\ejecucion.obra\\resolvers"
+    "\\src\\graphql\\ejecucion.obra\\resolvers",
+    "\\src\\graphql\\insumo.global",
+    "\\src\\graphql\\insumo.global\\resolvers",
+    "\\src\\loaders"
   ],
-  "SelectedNode": "\\src\\graphql\\ejecucion.obra\\resolvers\\ejecucion.obra.resolver.ts",
+  "SelectedNode": "\\datastore.ts",
   "PreviewInSolutionExplorer": false
 }
