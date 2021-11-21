@@ -13,4 +13,6 @@ export class DespachoInsumoInput {
     umedida: string;
     @Field(type => Int)
     cantidad: number;
+    @Field()
+    categoria: string;
 }

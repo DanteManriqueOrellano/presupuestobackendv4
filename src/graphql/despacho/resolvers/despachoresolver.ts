@@ -14,7 +14,7 @@ export class DespachoResolver {
 
     ): Promise<DespachoModel> {
         const insumos = undespacho.despachoinsumo.map((val) => {
-            return { id: val.id, insumo: val.insumo, cantidad: val.cantidad, umedida: val.umedida }
+            return { id: val.id, insumo: val.insumo, cantidad: val.cantidad, umedida: val.umedida, categoria: val.categoria }
 
         })
 
