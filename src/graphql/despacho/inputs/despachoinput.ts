@@ -16,6 +16,9 @@ export class DespachoInput {
     @Field()
     fechaDespacho: string
     @Field(type =>  [DespachoInsumoInput])
-    despachoinsumo: DespachoInsumoInput[]
+    despachoinsumo: DespachoInsumoInput[];
+    @Field()
+    idEjecucionObra:string
+
 
 }

@@ -1,4 +1,5 @@
 import { Collection  } from "fireorm";
+import { type } from "os";
 import { Field, ObjectType } from "type-graphql";
 import { BaseDespachoType } from "../types/basedespachotype";
 import { DespachoInsumoModel } from "./despachoinsumoModel";
@@ -9,4 +10,7 @@ import { DespachoInsumoModel } from "./despachoinsumoModel";
 export class DespachoModel extends BaseDespachoType {
     @Field(type => [DespachoInsumoModel])
     despachoinsumo: DespachoInsumoModel[];
+    @Field()
+    idEjecucionObra:string
+
 }

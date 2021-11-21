@@ -19,12 +19,13 @@ export class DespachoResolver {
         })
 
         const despachoinsumo = {
-            id: undespacho.id,
+            id: "",
             nroDespacho:undespacho.nroDespacho,
             nroRequerimiento: undespacho.nroRequerimiento,
             fechaPedido: undespacho.fechaPedido,
             fechaDespacho: undespacho.fechaDespacho,
-            despachoinsumo: insumos
+            despachoinsumo: insumos,
+            idEjecucionObra:undespacho.idEjecucionObra
         }
         
 
@@ -36,6 +37,16 @@ export class DespachoResolver {
     ): Promise<DespachoModel[]> {
         return await context.dataSources.despacho.listAll()
     }
+
+    @Query(()=>DespachoModel)
+    async buscaDespachoByIdEjecucionObra(
+        @Arg("id") id: string,
+        @Ctx() context: IDespachoContext
+    ):Promise<DespachoModel>{
+        return context.dataSources.despacho.findByIdEjecucionObra(id)
+
+    }
+
 
     @Mutation(() => String)
     async eliminarDespachoById(

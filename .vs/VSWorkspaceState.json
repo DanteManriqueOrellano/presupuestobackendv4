@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\graphql",
     "\\src\\graphql\\despacho",
-    "\\src\\graphql\\despacho\\resolvers",
+    "\\src\\graphql\\despacho\\inputs",
     "\\src\\graphql\\ejecucion.obra",
-    "\\src\\graphql\\ejecucion.obra\\resolvers",
+    "\\src\\graphql\\ejecucion.obra\\inputs",
     "\\src\\graphql\\insumo.global",
     "\\src\\graphql\\insumo.global\\resolvers",
     "\\src\\loaders"
   ],
-  "SelectedNode": "\\datastore.ts",
+  "SelectedNode": "\\src\\graphql\\despacho\\inputs\\despachoinput.ts",
   "PreviewInSolutionExplorer": false
 }

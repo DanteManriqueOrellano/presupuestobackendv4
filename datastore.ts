@@ -31,7 +31,7 @@ export class BaseCrud extends RESTDataSource implements IDatabase {
         this.repository = getRepository(this.modelo)
     }
     findById(id: string): Promise<any> {
-        return this.repository.findById(id)
+        return this.repository. findById(id)
     }
 
     async create<T>(input: createInput<T>, _id?: string): Promise<any> {
