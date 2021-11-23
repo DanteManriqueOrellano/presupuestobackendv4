@@ -9,7 +9,7 @@ import { DespachoInsumoModel } from "./despachoinsumoModel";
 @Collection()
 export class DespachoModel extends BaseDespachoType {
     @Field(type => [DespachoInsumoModel])
-    despachoinsumo: DespachoInsumoModel[];
+    despachoinsumo: Array<DespachoInsumoModel>;
     @Field()
     idEjecucionObra:string
 
